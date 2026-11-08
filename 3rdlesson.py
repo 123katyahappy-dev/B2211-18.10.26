@@ -55,7 +55,8 @@ if uploaded_file is not None:
         sketch = cv2.divide(gray, 255 - blurred, scale=256.0)
 
     elif filter_option == "Flip":
-        flip = cv2.flip(image_array, 1)
+        processed_img = cv2.flip(image_array, 1)
+        st.image(processed_img, caption="Flipped Image")
 
 
 
