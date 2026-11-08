@@ -25,7 +25,7 @@ if uploaded_file is not None:
 
     filter_option = st.sidebar.selectbox(
         "Choose the filter you like:",
-        ["Original", "Monochrome", "Brightness", "Inversion", "Contrast", "Blur","Sketch"]
+        ["Original", "Monochrome", "Brightness", "Inversion", "Contrast", "Blur","Sketch", "Flip"]
     )
 
     processed_img = image_array.copy()
@@ -53,6 +53,10 @@ if uploaded_file is not None:
         blurred = cv2.GaussianBlur(inverted, (21, 21), 0)
 
         sketch = cv2.divide(gray, 255 - blurred, scale=256.0)
+
+    elif filter_option == "Flip":
+        flip = cv2.flip(image_array, 1)
+
 
 
 
