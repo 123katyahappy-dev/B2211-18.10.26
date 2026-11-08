@@ -60,7 +60,6 @@ if uploaded_file is not None:
 
 
 
-
     with col2:
         st.header("Processed Image")
         st.image(processed_img, width="stretch")
